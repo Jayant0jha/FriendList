@@ -7,12 +7,7 @@
     android:padding="16dp"
     >
 
-    <ImageView
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:src="@mipmap/ic_launcher"
-        android:id="@+id/image"
-        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,10 +33,18 @@
             android:textStyle="bold"
             android:layout_margin="5dp"
             android:textSize="15sp"
-            android:id="@+id/textView2"
+            android:id="@+id/ages"
             />
-        <!--so our layout is set-->
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sub Title"
+            android:textColor="#a9a9a9"
+            android:textStyle="bold"
+            android:layout_margin="5dp"
+            android:textSize="15sp"
+            android:id="@+id/genders"
+            />
     </LinearLayout>
 
 </LinearLayout>

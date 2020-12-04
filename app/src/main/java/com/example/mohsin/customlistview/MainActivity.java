@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
     ListView listView;
     String mTitle[] = {"Zenab", "Anchal", "Tushar", "Dhruv", "Jagdish"};
-    String mDescription[] = {"padh le", "ghumne chle", "bhaiiiii", "hehe", "khana kha le"};
-    int images[] = {R.drawable.zenab, R.drawable.anchal, R.drawable.tushar, R.drawable.dhruv, R.drawable.jagdish};
+    String ages[] = {"21", "21", "22", "22", "21"};
+    String genders[] = {"female", "female", "male", "male", "male"};
 
 
     @Override
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.listView);
 
 
-        MyAdapter adapter = new MyAdapter(this, mTitle, mDescription, images);
+        MyAdapter adapter = new MyAdapter(this, mTitle, ages, genders);
         listView.setAdapter(adapter);
 
     }
@@ -40,15 +40,15 @@ public class MainActivity extends AppCompatActivity {
 
         Context context;
         String rTitle[];
-        String rDescription[];
-        int rImgs[];
+        String rGenders[];
+        String rAges[];
 
-        MyAdapter (Context c, String title[], String description[], int imgs[]) {
+        MyAdapter (Context c, String title[], String ages[], String genders[]) {
             super(c, R.layout.row, R.id.textView1, title);
             this.context = c;
             this.rTitle = title;
-            this.rDescription = description;
-            this.rImgs = imgs;
+            this.rAges = ages;
+            this.rGenders = genders;
 
         }
 
@@ -57,14 +57,15 @@ public class MainActivity extends AppCompatActivity {
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             LayoutInflater layoutInflater = (LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View row = layoutInflater.inflate(R.layout.row, parent, false);
-            ImageView images = row.findViewById(R.id.image);
             TextView myTitle = row.findViewById(R.id.textView1);
-            TextView myDescription = row.findViewById(R.id.textView2);
+            TextView ages = row.findViewById(R.id.ages);
+            TextView genders = row.findViewById(R.id.genders);
+
 
             // now set our resources on views
-            images.setImageResource(rImgs[position]);
             myTitle.setText(rTitle[position]);
-            myDescription.setText(rDescription[position]);
+            ages.setText(rAges[position]);
+            genders.setText(rGenders[position]);
 
 
 
